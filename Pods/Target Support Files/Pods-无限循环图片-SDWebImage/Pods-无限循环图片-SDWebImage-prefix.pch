@@ -1,0 +1,5 @@
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#endif
+
+#import "Pods-无限循环图片-environment.h"

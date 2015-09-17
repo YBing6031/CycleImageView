@@ -1,0 +1,1 @@
+PODS________SDWEBIMAGE_OTHER_LDFLAGS = -framework "ImageIO"

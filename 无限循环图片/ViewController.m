@@ -7,8 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "CycleScrollView.h"
+#import "CycleView.h"
 
-@interface ViewController ()
+@interface ViewController ()<CycleViewDelegate>
 
 @end
 
@@ -16,12 +18,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    NSMutableArray *images = [NSMutableArray array];
+    for (int  i = 5; i<9; i++) {
+        NSURL *url = [[NSBundle mainBundle] URLForResource:[NSString stringWithFormat:@"%zi.jpg", i] withExtension:nil];;
+        [images addObject:url];
+    }
+    
+    CycleView *cycleView = [[CycleView alloc] initWithFrame:CGRectMake(50, 50, 250, 150) images:images currentIndex:0 didSelectForIndex:^(NSInteger index) {
+        NSLog(@"%zi", index);
+    }];
+    [self.view addSubview:cycleView];
+    
+//    cycleView.delegate = self;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)cycleView:(CycleView *)cycleView didSelectForIndex:(NSInteger)index
+{
+    NSLog(@"%zi", index);
 }
 
 @end
