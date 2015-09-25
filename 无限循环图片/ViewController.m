@@ -7,10 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "CycleScrollView.h"
-#import "CycleView.h"
+#import "YBCycleView.h"
 
-@interface ViewController ()<CycleViewDelegate>
+@interface ViewController ()<YBCycleViewDelegate>
 
 @end
 
@@ -20,22 +19,23 @@
     [super viewDidLoad];
     
     NSMutableArray *images = [NSMutableArray array];
-    for (int  i = 5; i<9; i++) {
-        NSURL *url = [[NSBundle mainBundle] URLForResource:[NSString stringWithFormat:@"%zi.jpg", i] withExtension:nil];;
-        [images addObject:url];
+    for (int  i = 0; i<9; i++) {
+        NSURL *url = [[NSBundle mainBundle] URLForResource:[NSString stringWithFormat:@"%zi.jpg", i] withExtension:nil];
+        [images addObject:url.absoluteString];
     }
     
-    CycleView *cycleView = [[CycleView alloc] initWithFrame:CGRectMake(50, 50, 250, 150) images:images currentIndex:0 didSelectForIndex:^(NSInteger index) {
+    YBCycleView *cycleView = [[YBCycleView alloc] initWithFrame:CGRectMake(0, 50, self.view.bounds.size.width, 200) images:images currentIndex:0 didSelectForIndex:^(NSInteger index) {
         NSLog(@"%zi", index);
     }];
+    cycleView.pageControlShowStyle = YBCycleViewPageControlShowStyleCenter;
     [self.view addSubview:cycleView];
     
 //    cycleView.delegate = self;
 }
 
-- (void)cycleView:(CycleView *)cycleView didSelectForIndex:(NSInteger)index
+- (void)cycleView:(YBCycleView *)cycleView didSelectForIndex:(NSInteger)index
 {
-    NSLog(@"%zi", index);
+    NSLog(@"点击了 %zi", index);
 }
 
 @end

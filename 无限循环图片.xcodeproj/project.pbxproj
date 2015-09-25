@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3F6CDB5FE0131F2E52B9F3BB /* libPods-无限循环图片.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D39CED1A3E7D14414BE4635 /* libPods-无限循环图片.a */; };
-		9680B8FD1B7ADD0F0013B984 /* CycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9680B8FC1B7ADD0F0013B984 /* CycleView.m */; };
+		967F86F11BB3FEDD00A29BD5 /* YBCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 967F86EE1BB3FEDD00A29BD5 /* YBCycleScrollView.m */; };
+		967F86F21BB3FEDD00A29BD5 /* YBCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 967F86F01BB3FEDD00A29BD5 /* YBCycleView.m */; };
 		9695972C1B79F5B100C7D72F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9695972B1B79F5B100C7D72F /* main.m */; };
 		9695972F1B79F5B100C7D72F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9695972E1B79F5B100C7D72F /* AppDelegate.m */; };
 		969597321B79F5B100C7D72F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969597311B79F5B100C7D72F /* ViewController.m */; };
@@ -16,7 +17,6 @@
 		969597371B79F5B100C7D72F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 969597361B79F5B100C7D72F /* Images.xcassets */; };
 		9695973A1B79F5B100C7D72F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 969597381B79F5B100C7D72F /* LaunchScreen.xib */; };
 		969597461B79F5B100C7D72F /* ______Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 969597451B79F5B100C7D72F /* ______Tests.m */; };
-		969597571B7A016300C7D72F /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 969597561B7A016300C7D72F /* CycleScrollView.m */; };
 		969597611B7A025200C7D72F /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 969597581B7A025200C7D72F /* 0.jpg */; };
 		969597621B7A025200C7D72F /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 969597591B7A025200C7D72F /* 1.jpg */; };
 		969597631B7A025200C7D72F /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9695975A1B7A025200C7D72F /* 2.jpg */; };
@@ -41,8 +41,10 @@
 /* Begin PBXFileReference section */
 		2D39CED1A3E7D14414BE4635 /* libPods-无限循环图片.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-无限循环图片.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9319F2F73738F64862DEC7E3 /* Pods-无限循环图片.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-无限循环图片.debug.xcconfig"; path = "Pods/Target Support Files/Pods-无限循环图片/Pods-无限循环图片.debug.xcconfig"; sourceTree = "<group>"; };
-		9680B8FB1B7ADD0F0013B984 /* CycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleView.h; sourceTree = "<group>"; };
-		9680B8FC1B7ADD0F0013B984 /* CycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleView.m; sourceTree = "<group>"; };
+		967F86ED1BB3FEDD00A29BD5 /* YBCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBCycleScrollView.h; sourceTree = "<group>"; };
+		967F86EE1BB3FEDD00A29BD5 /* YBCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBCycleScrollView.m; sourceTree = "<group>"; };
+		967F86EF1BB3FEDD00A29BD5 /* YBCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBCycleView.h; sourceTree = "<group>"; };
+		967F86F01BB3FEDD00A29BD5 /* YBCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBCycleView.m; sourceTree = "<group>"; };
 		969597261B79F5B100C7D72F /* 无限循环图片.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "无限循环图片.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9695972A1B79F5B100C7D72F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9695972B1B79F5B100C7D72F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -56,8 +58,6 @@
 		9695973F1B79F5B100C7D72F /* 无限循环图片Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "无限循环图片Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		969597441B79F5B100C7D72F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		969597451B79F5B100C7D72F /* ______Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "______Tests.m"; sourceTree = "<group>"; };
-		969597551B7A016300C7D72F /* CycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleScrollView.h; sourceTree = "<group>"; };
-		969597561B7A016300C7D72F /* CycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleScrollView.m; sourceTree = "<group>"; };
 		969597581B7A025200C7D72F /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
 		969597591B7A025200C7D72F /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		9695975A1B7A025200C7D72F /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
@@ -97,6 +97,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		967F86EC1BB3FEDD00A29BD5 /* YBCycleView */ = {
+			isa = PBXGroup;
+			children = (
+				967F86ED1BB3FEDD00A29BD5 /* YBCycleScrollView.h */,
+				967F86EE1BB3FEDD00A29BD5 /* YBCycleScrollView.m */,
+				967F86EF1BB3FEDD00A29BD5 /* YBCycleView.h */,
+				967F86F01BB3FEDD00A29BD5 /* YBCycleView.m */,
+			);
+			path = YBCycleView;
+			sourceTree = "<group>";
+		};
 		9695971D1B79F5B100C7D72F = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +131,7 @@
 		969597281B79F5B100C7D72F /* 无限循环图片 */ = {
 			isa = PBXGroup;
 			children = (
+				967F86EC1BB3FEDD00A29BD5 /* YBCycleView */,
 				9695972D1B79F5B100C7D72F /* AppDelegate.h */,
 				9695972E1B79F5B100C7D72F /* AppDelegate.m */,
 				969597301B79F5B100C7D72F /* ViewController.h */,
@@ -127,10 +139,6 @@
 				969597331B79F5B100C7D72F /* Main.storyboard */,
 				969597361B79F5B100C7D72F /* Images.xcassets */,
 				969597381B79F5B100C7D72F /* LaunchScreen.xib */,
-				969597551B7A016300C7D72F /* CycleScrollView.h */,
-				969597561B7A016300C7D72F /* CycleScrollView.m */,
-				9680B8FB1B7ADD0F0013B984 /* CycleView.h */,
-				9680B8FC1B7ADD0F0013B984 /* CycleView.m */,
 				969597291B79F5B100C7D72F /* Supporting Files */,
 			);
 			path = "无限循环图片";
@@ -326,9 +334,9 @@
 			files = (
 				969597321B79F5B100C7D72F /* ViewController.m in Sources */,
 				9695972F1B79F5B100C7D72F /* AppDelegate.m in Sources */,
-				969597571B7A016300C7D72F /* CycleScrollView.m in Sources */,
-				9680B8FD1B7ADD0F0013B984 /* CycleView.m in Sources */,
+				967F86F11BB3FEDD00A29BD5 /* YBCycleScrollView.m in Sources */,
 				9695972C1B79F5B100C7D72F /* main.m in Sources */,
+				967F86F21BB3FEDD00A29BD5 /* YBCycleView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

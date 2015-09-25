@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D6DF3B5B-6997-4A04-93E5-C433B7443E6C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>无限循环图片</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>525B6FFDE3C1629393C8BCC5EE9939774D9930ED</key>
+		<string>https://github.com/Tom-YoYo/-.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>无限循环图片.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>525B6FFDE3C1629393C8BCC5EE9939774D9930ED</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Tom-YoYo/-.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>525B6FFDE3C1629393C8BCC5EE9939774D9930ED</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>525B6FFDE3C1629393C8BCC5EE9939774D9930ED</string>
+			<key>IDESourceControlWCCName</key>
+			<string>%E6%97%A0%E9%99%90%E5%BE%AA%E7%8E%AF%E5%9B%BE%E7%89%87</string>
+		</dict>
+	</array>
+</dict>
+</plist>

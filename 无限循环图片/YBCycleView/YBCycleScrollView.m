@@ -6,10 +6,12 @@
 //  Copyright (c) 2015年 aoyolo1. All rights reserved.
 //
 
-#import "CycleScrollView.h"
+#import "YBCycleScrollView.h"
 #import <UIImageView+WebCache.h>
 
-@interface CycleScrollView ()<UIScrollViewDelegate>
+NSString *const TimerRestartNotification = @"TimerRestartNotification";
+
+@interface YBCycleScrollView ()<UIScrollViewDelegate>
 @property (nonatomic, strong) NSArray *images;
 
 @property (nonatomic, strong) UIImageView *preImageView;
@@ -19,7 +21,24 @@
 
 @end
 
-@implementation CycleScrollView
+@implementation YBCycleScrollView
+
+- (void)setImages:(NSArray *)images
+{
+    NSMutableArray *imageArr = [NSMutableArray arrayWithArray:images];
+    if (images.count == 0) {
+        imageArr = nil;
+    }
+    else if (images.count == 1) {
+        [imageArr addObject:images[0]];
+        [imageArr addObject:images[0]];
+    }
+    else if (images.count == 2) {
+        [imageArr addObject:images[0]];
+        [imageArr addObject:images[1]];
+    }
+    _images = imageArr;
+}
 
 - (void)valueChange:(UIPageControl *)pageControl
 {
@@ -31,7 +50,6 @@
 {
     _currentIndex = currentIndex;
     [self setContentOffset:CGPointMake(self.bounds.size.width * 2, 0) animated:YES];
-//    [self configImages];
 }
 
 - (void)_initImageViews
@@ -42,6 +60,9 @@
     self.currentImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.nextImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width * 2, 0, self.bounds.size.width, self.bounds.size.height)];
     self.nextImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.preImageView.clipsToBounds = YES;
+    self.currentImageView.clipsToBounds = YES;
+    self.nextImageView.clipsToBounds = YES;
     [self addSubview:_preImageView];
     [self addSubview:_currentImageView];
     [self addSubview:_nextImageView];
@@ -63,9 +84,9 @@
 {
     NSInteger preIndex = [self beyondBoundWithIndex:_currentIndex - 1];
     NSInteger nextIndex = [self beyondBoundWithIndex:_currentIndex + 1];
-    [self.preImageView sd_setImageWithURL:self.images[preIndex]];
-    [self.currentImageView sd_setImageWithURL:self.images[_currentIndex]];
-    [self.nextImageView sd_setImageWithURL:self.images[nextIndex]];
+    [self.preImageView sd_setImageWithURL:[NSURL URLWithString:self.images[preIndex]]];
+    [self.currentImageView sd_setImageWithURL:[NSURL URLWithString:self.images[_currentIndex]]];
+    [self.nextImageView sd_setImageWithURL:[NSURL URLWithString:self.images[nextIndex]]];
     [self setContentOffset:CGPointMake(self.bounds.size.width, 0) animated:NO];
 }
 
@@ -87,6 +108,11 @@
     return self;
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    //定时器重新启动
+    [[NSNotificationCenter defaultCenter] postNotificationName:TimerRestartNotification object:nil];
+}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -120,7 +146,7 @@
 //        return;
 //    }
 //    CGFloat xOffset = scrollView.contentOffset.x;
-//    if (xOffset <= 0)
+//    if (xOffset <= self.bounds.size.width)
 //    {
 //        self.currentIndex = [self beyondBoundWithIndex:_currentIndex - 1];
 //        [self configImages];

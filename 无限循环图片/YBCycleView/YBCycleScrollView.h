@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 typedef void(^IndexChange)(NSInteger index);
-@interface CycleScrollView : UIScrollView
+
+UIKIT_EXTERN NSString *const TimerRestartNotification;
+
+@interface YBCycleScrollView : UIScrollView
 
 @property (nonatomic) NSInteger currentIndex;
 
